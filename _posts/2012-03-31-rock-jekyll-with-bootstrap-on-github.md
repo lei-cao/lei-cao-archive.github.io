@@ -24,4 +24,8 @@ Jekyll + Bootstrap + Github/Heroku 的免费 Blog 环境
   Problem5 "Liquid error: No such file or directory – pygmentize"
   
 ##基本命令
-- ` rake theme:switch name="the-program"`
+- `$ rake theme:switch name="the-program"`
+- `$ rake post title="Hello World"`
+- `$ rake page name="about.md"`
+- `$ rake page name="pages/about.md"` Create a nested page
+- `$ rake page name="pages/about"` Create a nice url page with index.html
