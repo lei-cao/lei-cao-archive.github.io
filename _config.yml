@@ -14,9 +14,9 @@ tagline: 继续一点点成长
 author :
   name : Lexo Charles
   email : lexo.charles@gmail.com
-  github : https://github.com/sixpoint
+  github : sixpoint
   twitter : AlexandeCharles
-  feedburner : github/wOKq
+  feedname : github/wOKq
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -99,7 +99,7 @@ JB :
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-123-12'
+        tracking_id : 'UA-9033252-5'
     getclicky :
       site_id : 
     mixpanel :
