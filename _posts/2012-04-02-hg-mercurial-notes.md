@@ -9,9 +9,9 @@ tags: [hg]
 - `hg init`
 - `hg add`
 - `hg commit` `hg com -m "commit"`
-- `hg log` 
-  *`hg log -l 3`
-  `hg log -P`
+- `hg log`  
+  *`hg log -l 3`  
+  `hg log -P`  
 - `hg revert -all` Revert your directory back to the last commit
 - `hg status` = `hg st`  
   *`M` means "Modified"  
@@ -23,8 +23,8 @@ tags: [hg]
 - `hg cat` To print any old version of a file.   
   *`hg cat -r 0 a.txt`
 - `hg update` Go backwards or forwards  
-  *`hg update -r 0` `hg up`
-
+  *`hg update -r 0` `hg up`  
+  
 - `hg push` From my repository into the central repository
 - `push -f` **NEVER USE THIS**
 - `hg outgoing` Print the changes that are waiting for push `hg out`?
