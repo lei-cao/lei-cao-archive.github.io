@@ -2,7 +2,7 @@
 layout: post
 title: "Rock Jekyll with Bootstrap on github"
 description: "Star playing with Jekyll on Github or Heroku!"
-category: [guide]
+category: guide
 tags: [intor, jekyll, tutorial, ruby]
 ---
 {% include JB/setup %}

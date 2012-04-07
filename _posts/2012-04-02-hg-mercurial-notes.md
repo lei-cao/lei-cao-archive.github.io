@@ -2,19 +2,20 @@
 layout: post
 title: "hg Mercurial notes"
 description: " "
-category: [notes]
+category: notes
 tags: [hg]
 ---
 {% include JB/setup %}  
 
-``` 
+ 
+{% highlight bash %}
 [ui]  
 username = charles <lexo.charles@gmail.com>  
 [auth]  
 bb1.prefix = http://192.168.1.107/hg/repos/  
 bb1.username = charles  
-bb1.password = charles  
-```  
+bb1.password = charles
+{% endhighlight %}  
 
 - `hg init`
 - `hg add`
