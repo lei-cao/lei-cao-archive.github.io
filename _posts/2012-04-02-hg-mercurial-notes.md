@@ -1,11 +1,21 @@
 ---
 layout: post
 title: "hg Mercurial notes"
-description: ""
+description: " "
 category: [notes]
 tags: [hg]
 ---
-{% include JB/setup %}
+{% include JB/setup %}  
+
+``` 
+[ui]  
+username = charles <lexo.charles@gmail.com>  
+[auth]  
+bb1.prefix = http://192.168.1.107/hg/repos/  
+bb1.username = charles  
+bb1.password = charles  
+```  
+
 - `hg init`
 - `hg add`
 - `hg commit` `hg com -m "commit"`
@@ -33,7 +43,7 @@ tags: [hg]
 - `hg merge` Take two heads and combine them together
 
 - `hg rollback` Undoes one commit
-- `hg clone name anotherName
+- `hg clone name anotherName`
 - `hg paths`
 - `hg parent`
 - `hg heads`
