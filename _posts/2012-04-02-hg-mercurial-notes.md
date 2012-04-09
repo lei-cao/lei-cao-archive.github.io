@@ -19,6 +19,8 @@ bb1.password = charles
 
 - `hg init`
 - `hg add`
+- `hg addremove` Add all new files and remove all locally missing fiels
+- `hg remove --after` `hg remove -A`
 - `hg commit` `hg com -m "commit"`
 - `hg log`  
   *`hg log -l 3`  
