@@ -25,6 +25,7 @@ bb1.password = charles
 - `hg log`  
   *`hg log -l 3`  
   `hg log -P`  
+- `hg identify -n`
 - `hg revert -all` Revert your directory back to the last commit
 - `hg status` = `hg st`  
   *`M` means "Modified"  
