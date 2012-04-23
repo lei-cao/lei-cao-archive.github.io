@@ -32,5 +32,48 @@ Response
   
 - `#fragment` don't send to server
 
+Request
+=======
+Difference between GET and POST  
+
+GET:
+----
+- Parameters in URL
+- Used for fetching documents
+- maximum URL length
+- **OK to cache**
+- **Shouldn't change the server**
+
+POST:
+-----
+- Parameters in the body
+- Userd for updating data
+- No max length
+- **Not OK to cache**
+- **OK to change the server**
+
+After posting Limitation
+------------------------
+- Can't store Success link
+- Can't reload the page without annoying message
+So use redirect  
+
+Form
+====
+checkbox
+--------
+- checked:on, SO check it is 'on' otherwise if off
+- unchecked: Doesn't appear on the URL
+radio
+--------
+- checked:on if 'value' is None
+- Use as a group: same 'name' with the different 'value'
+select
+------
+- if option no 'value' setted: the text will be submit
 
 
+python
+======
+`import cgi`
+`cgi.escape(s, quote = True)`
