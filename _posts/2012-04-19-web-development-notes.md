@@ -65,7 +65,7 @@ checkbox
 - checked:on, SO check it is 'on' otherwise if off
 - unchecked: Doesn't appear on the URL
 radio
---------
+-----
 - checked:on if 'value' is None
 - Use as a group: same 'name' with the different 'value'
 select
