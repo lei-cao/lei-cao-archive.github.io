@@ -77,3 +77,18 @@ python
 ======
 `import cgi`
 `cgi.escape(s, quote = True)`
+
+Scaling
+=======
+- AKAMAI
+- Static never hit Haproxy
+- Haproxy
+- NGINX
+- Amazon s3
+- If don't do joins, scaling is easier
+- Landisle
+- Precomputed cache
+- Memcache/Memcached
+- Cassandre
+- Thing DB
+
