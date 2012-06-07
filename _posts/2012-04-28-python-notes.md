@@ -27,3 +27,26 @@ tags: [python]
 - NamedTuple = namedtuple('NamedTUple', ['id', 'title', 'type'])
 - list.sort(key = lambda x: x.submitted_time)
 - Use `mydict.get()`
+
+- `'1'.isdigit()` True
+  
+- Hash:
+-- `import hashlib`
+-- `x = hashlib.md5("foo!")`
+-- `x.hexdigest()`
+-- `import hmac`
+-- `hmac.new("secret", "udacity").hexdigest()`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
