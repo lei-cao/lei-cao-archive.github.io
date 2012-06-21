@@ -6,6 +6,32 @@ category: notes
 tags: [ruby]
 ---
 {% include JB/setup %}
+```ruby
+rails new demo
+cd demo
+rake doc:rails  # doc/api/index.html
+rake about
+gem install sqlite3
+gem install mysql2
+rails server
+rails server webrick
+
+# hello world
+rails generate controller Say hello goodbye
+# visit http://localhost:3000/say/hello
+
+# controller
+@time = Time.now
+@files = Dir.glob('*')
+# view
+<%= link_to "Goodbye",
+    say_goodbye_path %>!
+
+#  Railes Model Support
+    # Object-Relational Mapping
+        #Active Record
+# Action Pack: View and Controller
+```
 
 {% highlight ruby%}
 
