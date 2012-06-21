@@ -6,7 +6,7 @@ category: notes
 tags: [ruby]
 ---
 {% include JB/setup %}
-```ruby
+{% highlight ruby%}
 rails new demo
 cd demo
 rake doc:rails  # doc/api/index.html
@@ -31,7 +31,7 @@ rails generate controller Say hello goodbye
     # Object-Relational Mapping
         #Active Record
 # Action Pack: View and Controller
-```
+{% endhighlight %}
 
 {% highlight ruby%}
 
