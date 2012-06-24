@@ -34,8 +34,11 @@ rails generate controller Say hello goodbye
 {% endhighlight %}
 
 {% highlight ruby%}
-
-number = 2
+nil is a object represent nothing
+<< appends a value to it's receiver
+a = ['a', 'b', 'c']
+# is the same:
+a = %w{a b c}wnumber = 2
 alert "hello world" + number.to_s
 if number ==2
     alert "Yes!"
