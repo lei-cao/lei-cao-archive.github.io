@@ -12,11 +12,11 @@ Agile Web Development with Rails
 
 Chapter 6. Creating the Application.
 -----------------------------------
-*** Iteration A1:
+* Iteration A1:
 - `rails new depot`
 - `cd depot`
 
-** Generating the Scaffold
+* Generating the Scaffold
 - `rails generate scaffold Product title:string description:text image_url:string price:decimal`
 - `t.decimal :price, precision: 8, scale: 2` Modify the migrate file
 - `rake db:migrate` Apply the migrations to our development database
@@ -24,7 +24,7 @@ Chapter 6. Creating the Application.
 - Add some products, then shutdown the server to test the test
 - `rake test`
 
-*** Iteration A2: making prettier Listings
+* Iteration A2: making prettier Listings
 - modify the file in the db directory named seeds.rb, add some seed data
 - `rake db:seed` populate the data into database
 - Styling it a little bit more in app/assets/stylesheets/products.css.scss
@@ -52,9 +52,9 @@ Chapter 6. Creating the Application.
   </tr>
 <% end %>
 </table>
-{% endhightlight %}
+{% endhighlight %}  
 
-** Playtime
+* Playtime
 - `rake db:rollback` After rollbacking and then migrating again, every data lost
 - `rake db:migrate`
 
