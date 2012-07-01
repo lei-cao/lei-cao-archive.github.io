@@ -6,10 +6,39 @@ category: notes
 tags: [ruby]
 ---
 {% include JB/setup %}
+{% highlight ruby%}
+rails new demo
+cd demo
+rake doc:rails  # doc/api/index.html
+rake about
+gem install sqlite3
+gem install mysql2
+rails server
+rails server webrick
+
+# hello world
+rails generate controller Say hello goodbye
+# visit http://localhost:3000/say/hello
+
+# controller
+@time = Time.now
+@files = Dir.glob('*')
+# view
+<%= link_to "Goodbye",
+    say_goodbye_path %>!
+
+#  Railes Model Support
+    # Object-Relational Mapping
+        #Active Record
+# Action Pack: View and Controller
+{% endhighlight %}
 
 {% highlight ruby%}
-
-number = 2
+nil is a object represent nothing
+<< appends a value to it's receiver
+a = ['a', 'b', 'c']
+# is the same:
+a = %w{a b c}wnumber = 2
 alert "hello world" + number.to_s
 if number ==2
     alert "Yes!"

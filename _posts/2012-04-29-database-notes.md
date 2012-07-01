@@ -20,6 +20,15 @@ Redis
 [Redis tutorial](http://simonwillison.net/static/2010/redis-tutorial/)  
 [Redis slide](http://www.slideshare.net/tag/redis/2)  
 [Redis cookbook](http://rediscookbook.org/index.html)    
+[Youporn High scalability](http://highscalability.com/blog/2012/4/2/youporn-targeting-200-million-views-a-day-and-beyond.html)  
+[Auto complete with Redis](http://antirez.com/post/autocomplete-with-redis.html)  
+[Auto complete](http://charlesleifer.com/blog/autocompletion-for-django-models-using-solr-redis-or-sql/)
+[Autocomplete in python](http://jedp.posterous.com/auto-complete-with-redis-and-python)
+[Redis memory usage analatics](http://dev.lethain.com/notes-on-redis-memory-usage/)  
+[Redis memory use tirck](http://nosql.mypopescu.com/post/1010844204/redis-memory-usage)  
+[Autocomplete](http://patshaughnessy.net/2011/11/29/two-ways-of-using-redis-to-build-a-nosql-autocomplete-search-index)  
+[A case study](http://www.tobez.org/presentations/2011-NPW-redis.html#%2837%29)  
+
 - Google appengine datastore  
 - Dynamo (a paper worth to read)  
 - NoSQL: Mongo, couch  

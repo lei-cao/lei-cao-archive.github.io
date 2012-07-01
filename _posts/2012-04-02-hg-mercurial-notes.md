@@ -7,7 +7,8 @@ tags: [hg]
 ---
 {% include JB/setup %}  
 
- 
+[25-tips-for-intermediate-mercurial-users.html](http://antonym.org/2010/04/25-tips-for-intermediate-mercurial-users.html)   
+
 {% highlight bash %}
 [ui]  
 username = charles <lexo.charles@gmail.com>  
@@ -15,6 +16,42 @@ username = charles <lexo.charles@gmail.com>
 bb1.prefix = http://192.168.1.107/hg/repos/  
 bb1.username = charles  
 bb1.password = charles
+
+[paths]
+goog = http://code.google.com/p/golang/
+exp = https://bitbucket.org/gavinb/golang-exp/
+
+# hg incoming http://code.google.com/p/golang/
+# hg incoming goog
+
+# hg outgoing https://bitbucket.org/gavinb/golang-exp/
+# hg outgoing exp
+
+[extensions]
+hgext.extdiff =
+graphlog=
+pager=
+color=
+fetch=
+record=
+bookmarks=
+
+[extdiff]
+cmd.diffmerge = /usr/bin/diffmerge
+
+[pager]
+pager = LESS='FSRX' less
+ignore = version, help, update, serve, record
+
+
+[merge-tools]
+diffmerge.executable = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge
+diffmerge.args = -merge -result=$output -t1="Local Version" -t2=$output -t3="Other Version" -caption=$output $local $base $other
+diffmerge.binary = False
+diffmerge.symlinks = False
+diffmerge.gui = True
+
+
 {% endhighlight %}  
 
 - `hg init`
@@ -51,3 +88,26 @@ bb1.password = charles
 - `hg paths`
 - `hg parent`
 - `hg heads`
+
+
+Intermediate
+============
+- `hg resolve -m main.c` To mark a conflicted file as resolved
+- `hg resolve -l` To check the status of files involved in the merge
+
+Tagging
+-------
+- `hg tags`
+- `hg tag version_1_3` To add a regular tag to the current revision
+- `hg tag -r 4a93 version_1_2_1` To associate a tag with a specific revision, you use the -r option:
+- `hg tag -l experimental` Local tag
+- `hg merge -P gui_changes_experimental` merge preview
+- `hg diff gui_changes_experimental` diff branches
+- `hg push -r gui_changes_experimental` push a single branch (default is push all commits)
+  
+- If you are in the middle of a set of changes, and you need to perform an operation on the repository without first committing all of your local changes, you can "stash" them away and set them aside using the shelve extension. This puts your current set of changes into a temporary storage area, from which you can restore them later.  
+- `hg shelve` To save your changes
+- `hg unshelve` 
+  
+- `hg record`
+- `hg glog`
