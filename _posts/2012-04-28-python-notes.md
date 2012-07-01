@@ -11,6 +11,12 @@ tags: [python]
 [pypress](http://laoqiu.com)
 
 - `dir(class)` List object's attributes
+- `x = 'hello'`
+- `y = 'hello'`
+- `id(x)`
+- `id(y)`
+  
+- `bool(8)`
   
 - `apple = Fruit()`
 - `print apple.__dict__`
@@ -27,3 +33,23 @@ tags: [python]
 - NamedTuple = namedtuple('NamedTUple', ['id', 'title', 'type'])
 - list.sort(key = lambda x: x.submitted_time)
 - Use `mydict.get()`
+
+
+pdb
+===
+`python -m pdb buggy.py`
+
+```python
+import buggy
+import pdb
+pdb.set_trace()
+
+buggy.crash()
+pdb.pm()
+```
+- l(ist)
+- n(ext)
+- c(ontinue)
+- s(tep)
+- r(eturn)
+- b(reak)
