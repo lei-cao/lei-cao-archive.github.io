@@ -10,6 +10,41 @@ tags: [python]
 [Google python style guide](http://google-styleguide.googlecode.com/svn/trunk/pyguide.html)  
 [pypress](http://laoqiu.com)
 
+- 
+{% highlight python %}
+topics = [
+        (11, 'A', 'foo'),
+        (22, 'A', 'bar'),
+        (33, 'A', 'foobar'),
+        
+        ('sss', 'B', 'lol'),
+        ('mmm', 'B', 'cat'),
+        
+        ('nice', 'C', 'dog')]
+
+# to 
+# output = [
+#       [(11,'A','foo'),(22,'A', 'bar'), (33, 'A', 'foobar')],
+#       [('sss', 'B', 'lol'), ('mmm', 'B', 'cat')],
+#       [('nice', 'C', 'dog')]
+#       ]
+#
+#
+#
+#
+
+import itertools
+import operator
+
+category_topics_list = []
+categories_list = []
+for key, group in itertools.groupby(topics, operator.itemgetter(3)):
+    category_topics_list.append(list(group))
+    categories_list.append(key)
+
+
+{% endhighlight %}
+
 - `dir(class)` List object's attributes
 - `x = 'hello'`
 - `y = 'hello'`
@@ -48,14 +83,16 @@ pdb
 ===
 `python -m pdb buggy.py`
 
-```python
+{% highlight python %}
+python
 import buggy
 import pdb
 pdb.set_trace()
 
 buggy.crash()
 pdb.pm()
-```
+{% endhighlight %}
+
 - l(ist)
 - n(ext)
 - c(ontinue)
