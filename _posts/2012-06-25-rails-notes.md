@@ -334,3 +334,137 @@ Play Time 9
 {% endhighlight %}
  in `app/controllers/line_items_controller.rb` add `clear_view_counter` to function  `create`
     
+Chapter 10 A Smarter Cart
+=========================
+10.1 Creating a Smarter Cart
+----------------------------
+- `rails generate migration add_quantity_to_line_items quantity:integer` add_XXX_to_TABLE and remove_XXX_from_TABLE
+- then change the default value: `, default: 1`
+- `rake db:migrate`
+  
+- then in `app/models/cart.rb`
+
+{% highlight ruby %}
+  def add_product(product_id)
+    # starting find_by and ends with the name of a column, Dynamic Finders
+    current_item = line_items.find_by_product_id(product_id)
+    
+    if current_item
+      current_item.quantity += 1
+    else
+      current_item = line_items.build(product_id: product_id)
+    end
+    current_item
+  end
+{% endhighlight %}
+
+- then in `app/controllers/line_items_controller.rb` invoke the method defined above
+  ~~@line_item = @cart.line_items.build~~
+  ~~@line_item.product = product~~
+  `@line_item = @cart.add_product(product.id)`
+- then in `app/views/carts/show.html.erb` `<%= item.quantity  %> &times;`
+  
+### Next we need to migrate the data
+- `rails generate migration combine_items_in_cart` modify up and down 
+{% highlight ruby %}
+  def up
+    # replace multiple items for a single product in a crat with a single item
+    Cart.all.each do |cart|
+      # count the number of each product in the cart
+      sums = cart.line_items.group(:product_id).sum(:quantity)
+      sums.each do |product_id, quantity|
+        if quantity > 1
+          # remove individual items
+          cart.line_items.where(product_id: product_id).delete_all
+          # replace with a single item
+          cart.line_items.create(product_id: product_id, quantity: quantity)
+        end
+      end
+    end
+  end
+{% endhighlight %}
+- then `rake db:migrate`
+- also implement the down method:
+{% highlight ruby %}
+  def down
+    # split items with quantity > 1 into multiple items 
+    LineItem.where("quantity>1").each do |line_item|
+      # add individual items
+      line_item.quantity.times do
+        LineItem.create cart_id: line_item.cart_id,
+          product_id: line_item.product_id, quantity: 1
+      end
+      # remove original item
+      line_item.destroy
+    end
+  end
+{% endhighlight %}
+- Now we can rollback: `rake db:rollback`
+
+10.2 Handling Errors
+----------------------
+- in `app/controllers/carts_controller.rb`
+{% highlight ruby %}
+  def show
+    begin
+      @cart = Cart.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      logger.error "Attempt to access invalid cart #{params[:id]}"
+      redirect_to store_url, notice: 'Invalid cart'
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @cart }
+      end
+    end
+  end
+{% endhighlight %}
+10.3 Finishing the Cart
+-----------------------
+To empty a cart, need to delete the session  
+- in `app/views/carts/show.html.erb` add a button_to. Then modify the destroy method in `app/controllers/carts_controller.rb`
+
+{% highlight ruby %}
+  def destroy
+    @cart = current_cart
+    @cart.destroy
+    session[:cart_id] = nil
+
+    #@cart = Cart.find(params[:id])
+    #@cart.destroy
+
+    respond_to do |format|
+      format.html { redirect_to store_url, notice: 'Your cart is currently empty' }
+      format.json { head :no_content }
+    end
+  end
+{% endhighlight %}
+
+Battle of the Routes: product_path vs. product_url
+--------------------------------------------------
+### When using `product_url`, you'll get the full enchilada with protocol and domain name. That's the thing to use when you're doing `redirect_to`, cuz HTTP requies a fully qualified URL when doing 302 Redirect. Between domains: `product_url(domain: "example2.com", product: product)`
+- update the corresponding test in `test/functional/carts_controller_test.rb`
+
+{% highlight ruby %}
+  test "should destroy cart" do
+    assert_difference('Cart.count', -1) do
+      session[:cart_id] = @cart.id
+      delete :destroy, id: @cart
+    end
+
+    assert_redirected_to store_path
+  end
+{% endhighlight %}
+- remove the flash messages that is automatically generateds in `app/controllers/line_items_controller.rb`
+- modify the view: `<%= number_to_currency(@cart.total_price)  %>`, then in `app/models/line_item.rb`
+{% highlight ruby %}
+  def total_price
+    product.price * quantity
+  end
+{% endhighlight %}
+- in `app/models/cart.rb`
+{% highlight ruby %}
+  def total_price
+    line_items.to_a.sum { |item| item.total_price }
+  end
+{% endhighlight %}
