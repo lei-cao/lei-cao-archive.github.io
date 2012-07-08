@@ -47,33 +47,46 @@ else
 end
 {% endhighlight %}
 
+RubyMonk
+========
+1.0 Introduction to Objects
+---------------------------
+- `self`
+- `2.even?` # true
+- `1.next.next` # 3
+- `1.methods` # samilar as dir() in python
+- `1.methods.sort`
+- `2.between?(1,3)` # true `4.+(3)` # 7
+- `words = ["foo", "bar", "baz"]`
+- `words.[](1)` # bar
+2.0 Classes
+-----------
+- `puts 1.class` # Fixnum `puts "".class` # String `puts [].class` # Array
+- `1.class.class` # Class `obj = Object.new`
+
 {% highlight ruby%}
-require 'gosu'
-
-class MyGame < Gosu::Window
-  def initialize
-    super(300, 400, false)
-    @player1 = Player.new(self)
+class Rectangle 
+  def initialize(length, breadth)
+    @length = length
+    @breadth = breadth
   end
-
-  def update
+  def perimeter
+    2 * (@length + @breadth)
   end
-
-  def draw
-  end
-
 end
-class Player
-  def initialize(game_window)
-    @game_window = game_window
-    @icon = Gosu::Image.new(@game_window, "gosu/player1.png", true)
-  end
-  def draw
-    @icon.draw(50, 50, 1)
-  end
-  
-end
-
-window = MyGame.new
-window.show
 {% endhighlight %}
+
+3.0 Introduction to Strings
+---------------------------
+- `'str'.length`
+{% highlight ruby%}
+a = 1 
+b = 4
+puts "The number #{a} is less than #{b}"
+{% endhighlight %}
+- `"[Yoda:]".include? "Yoda"` # true
+- `"Ruby is a ...".start_with? "Ruby"` # true, end_with? index upcase downcase swapcase
+- `"I I I".sub('I', 'We')` # We I I
+- `"I I I".gsub('I', 'We')` # We We We
+- `"I i I".gsub(/[A-Z]/, 'We') # We i We
+- `'RubyMonk Is Pretty Brilliant'.match(/ ./)` # I
