@@ -90,3 +90,12 @@ puts "The number #{a} is less than #{b}"
 - `"I I I".gsub('I', 'We')` # We We We
 - `"I i I".gsub(/[A-Z]/, 'We') # We i We
 - `'RubyMonk Is Pretty Brilliant'.match(/ ./)` # I
+
+UBUNTU
+======
+mapping keys:
+-------------
+[Mapping keys](http://askubuntu.com/questions/24916/how-do-i-remap-certain-keys)  
+to test keycode: `xev`  
+mapping Casp_Lock(66) to Escape(9)  
+`xmodmap -e "keycode 66=Escape"`  
