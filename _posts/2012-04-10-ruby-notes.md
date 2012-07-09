@@ -99,3 +99,4 @@ mapping keys:
 to test keycode: `xev`  
 mapping Casp_Lock(66) to Escape(9)  
 `xmodmap -e "keycode 66=Escape"`  
+`lsb_release -a` #Test version  
