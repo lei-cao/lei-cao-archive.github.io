@@ -94,6 +94,13 @@ Intermediate
 ============
 - `hg resolve -m main.c` To mark a conflicted file as resolved
 - `hg resolve -l` To check the status of files involved in the merge
+To close a branch
+-----------------
+- `hg up -C badbranch`
+- `hg commit --close-branch -m 'close badbranch, this approach never worked'`
+- `hg up -C default` # switch back to "good" branch
+- `hg branches`
+- `hg branches --active`
 
 Tagging
 -------
