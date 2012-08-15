@@ -16,6 +16,7 @@ Change hosts in /etc/host
 - `sudo netstat -tulpn| grep :80`
 - `sudo chown -R username:www-data /home/dir`
 - `sudo chmod -R g+w /home/dir`
+- `dig -t TXT _netblocks.google.com @ns1.google.com` Check netblocks
 
 
 Using vagrant
