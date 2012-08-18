@@ -18,6 +18,7 @@ Change hosts in /etc/host
 - `sudo chmod -R g+w /home/dir`
 - `dig -t TXT _netblocks.google.com @ns1.google.com` Check netblocks
 - `top`
+- `ssh -C2qTnN -D 8080 username@remote_machine.com`
 
 
 Using vagrant
