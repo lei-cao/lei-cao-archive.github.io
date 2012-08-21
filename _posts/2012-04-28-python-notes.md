@@ -10,7 +10,12 @@ tags: [python]
 [Google python style guide](http://google-styleguide.googlecode.com/svn/trunk/pyguide.html)  
 [pypress](http://laoqiu.com)
 
-- 
+- some regular expressions:
+{% highlight python %}
+(?<=\s@[a-z]+) \| #'|'s  in "sfdsf343fdsfdef @name | sfs sfs @brand | sfs 1 2 3 "
+(?<=url\(").*(?="\)) # url("sfsfsfsf") in ""
+{% endhighlight %}
+
 {% highlight python %}
 topics = [
         (11, 'A', 'foo'),
