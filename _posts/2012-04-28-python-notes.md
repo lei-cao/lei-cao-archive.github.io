@@ -14,6 +14,7 @@ tags: [python]
 {% highlight python %}
 (?<=\s@[a-z]+) \| #'|'s  in "sfdsf343fdsfdef @name | sfs sfs @brand | sfs 1 2 3 "
 (?<=url\(").*(?="\)) # url("sfsfsfsf") in ""
+(?<=\/).*(?=\.html) # sfssfs/3432324.html -> 3432324
 {% endhighlight %}
 
 {% highlight python %}
