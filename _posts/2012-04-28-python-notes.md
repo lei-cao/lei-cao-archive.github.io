@@ -6,6 +6,8 @@ category: notes
 tags: [python]
 ---
 {% include JB/setup %}
+
+- [Install wsgi/django on cpanel](http://toic.org/blog/2011/03/27/wsgi-on-cpanel-improved/)
   
 [Google python style guide](http://google-styleguide.googlecode.com/svn/trunk/pyguide.html)  
 [pypress](http://laoqiu.com)
