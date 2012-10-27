@@ -30,3 +30,6 @@ Using vagrant
 - `vagrant init lucid32`
 - `vagrant up`
 
+Centos/Cpanel/VPS
+===========
+- [Set up mail MX record](http://www.webhostgear.com/272.html)
