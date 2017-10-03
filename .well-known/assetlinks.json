@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "criteo.cao.l.applinks",
+    "sha256_cert_fingerprints":
+    ["C5:6E:38:60:F6:6F:F7:5F:2F:25:63:1C:C9:F3:D1:8F:DA:0F:27:7D:24:FF:17:31:0F:F0:C1:5A:CE:13:CA:69"]
+  }
+}]
+
