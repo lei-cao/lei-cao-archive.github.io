@@ -6,5 +6,14 @@
     "sha256_cert_fingerprints":
     ["C5:6E:38:60:F6:6F:F7:5F:2F:25:63:1C:C9:F3:D1:8F:DA:0F:27:7D:24:FF:17:31:0F:F0:C1:5A:CE:13:CA:69"]
   }
+}, 
+{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "gabriele.criteosdksource",
+    "sha256_cert_fingerprints":
+    ["91:04:B8:1B:7B:5C:1F:16:48:58:CA:FB:0F:AE:F6:96:ED:2C:0E:A3:3C:AE:4A:B2:69:53:19:B7:8A:65:5C:34"]
+  }
 }]
 
